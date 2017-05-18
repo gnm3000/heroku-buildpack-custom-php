@@ -1,0 +1,11 @@
+#!/bin/bash
+# Build Path: /app/.heroku/php/
+if (pecl shell-test trader); then
+    echo "Si esta instalado trader.so";
+else
+    echo "No esta instalado trader.so";
+    pecl install trader;
+    #echo 'extension=trader.so' > '/app/.heroku/php/etc/php/conf.d/110-ext-trader.ini';
+    
+fi
+
